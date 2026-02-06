@@ -1,3 +1,6 @@
+
+// ALLA FINE TestDatabase L HO USATO PER MANDARARE AL DATABASE TUTTI I DATI, MODIFICANDO NOMI, CITTA ECC.
+
 package virgilistrate.U5L5.runners;
 
 import lombok.RequiredArgsConstructor;
@@ -6,7 +9,7 @@ import org.springframework.stereotype.Component;
 import virgilistrate.U5L5.entities.*;
 import virgilistrate.U5L5.repositories.*;
 
-@Component
+// @Component
 @RequiredArgsConstructor
 public class TestDatabase implements CommandLineRunner {
 
@@ -20,38 +23,38 @@ public class TestDatabase implements CommandLineRunner {
         System.out.println(" TEST DATABASE START ");
 
         // EDIFICI
-        Edificio napoli = new Edificio("Sede Napoli", "Via Buonarotti 13", "Napoli");
-        Edificio palermo = new Edificio("Sede Palermo", "Via Stretto 37", "Palermo");
+        Edificio venezia = new Edificio("Sede Venezia", "Via Napoli 54", "Venezia");
+        Edificio bari = new Edificio("Sede Baria", "Via Nobel 73", "Bari");
 
-        edificioRepository.save(napoli);
-        edificioRepository.save(palermo);
+        edificioRepository.save(venezia);
+        edificioRepository.save(bari);
 
         // POSTAZIONI
-        Postazione p3 = new Postazione(
-                0003,
-                "Postazione privata 1",
+        Postazione p5 = new Postazione(
+                0005,
+                "Postazione riunioni 9",
                 TipoPostazione.SALA_RIUNIONI,
-                1,
-                napoli
+                9,
+                venezia
         );
 
-        Postazione p4 = new Postazione(
-                0004,
-                "Open space 5 posti",
+        Postazione p6 = new Postazione(
+                0006,
+                "Open space 7 posti",
                 TipoPostazione.OPENSPACE,
-                5,
-                palermo
+                7,
+                bari
         );
 
-        postazioneRepository.save(p3);
-        postazioneRepository.save(p4);
+        postazioneRepository.save(p5);
+        postazioneRepository.save(p6);
 
         // UTENTI
-        Utente u3 = new Utente("Virgilist", "Virgil", "Istrate", "virgil@email.com");
-        Utente u4 = new Utente("Marco", "Marco", "Califano", "marco@email.com");
+        Utente u5 = new Utente("Giuliz", "Giulia", "Bianchi", "giulia@email.com");
+        Utente u6 = new Utente("Mariaro", "Maria", "Rosa", "maria@email.com");
 
-        utenteRepository.save(u3);
-        utenteRepository.save(u4);
+        utenteRepository.save(u5);
+        utenteRepository.save(u6);
 
         System.out.println(" DATI INSERITI CORRETTAMENTE ");
     }
