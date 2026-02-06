@@ -20,38 +20,38 @@ public class TestDatabase implements CommandLineRunner {
         System.out.println(" TEST DATABASE START ");
 
         // EDIFICI
-        Edificio milano = new Edificio("Sede Milano", "Via Galvani 24", "Milano");
-        Edificio roma = new Edificio("Sede Roma", "Viale dell'Arte 25", "Roma");
+        Edificio napoli = new Edificio("Sede Napoli", "Via Buonarotti 13", "Napoli");
+        Edificio palermo = new Edificio("Sede Palermo", "Via Stretto 37", "Palermo");
 
-        edificioRepository.save(milano);
-        edificioRepository.save(roma);
+        edificioRepository.save(napoli);
+        edificioRepository.save(palermo);
 
         // POSTAZIONI
-        Postazione p1 = new Postazione(
-                0001,
+        Postazione p3 = new Postazione(
+                0003,
                 "Postazione privata 1",
-                TipoPostazione.PRIVATO,
+                TipoPostazione.SALA_RIUNIONI,
                 1,
-                milano
+                napoli
         );
 
-        Postazione p2 = new Postazione(
-                0002,
+        Postazione p4 = new Postazione(
+                0004,
                 "Open space 5 posti",
                 TipoPostazione.OPENSPACE,
                 5,
-                roma
+                palermo
         );
 
-        postazioneRepository.save(p1);
-        postazioneRepository.save(p2);
+        postazioneRepository.save(p3);
+        postazioneRepository.save(p4);
 
         // UTENTI
-        Utente u1 = new Utente("giangiorgio", "Giovanni", "Giorgini", "Giovanni@email.com");
-        Utente u2 = new Utente("AjejeBrazorf", "Aldo", "Baglio", "Aldo@email.com");
+        Utente u3 = new Utente("Virgilist", "Virgil", "Istrate", "virgil@email.com");
+        Utente u4 = new Utente("Marco", "Marco", "Califano", "marco@email.com");
 
-        utenteRepository.save(u1);
-        utenteRepository.save(u2);
+        utenteRepository.save(u3);
+        utenteRepository.save(u4);
 
         System.out.println(" DATI INSERITI CORRETTAMENTE ");
     }
